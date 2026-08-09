@@ -1,0 +1,12 @@
+{
+  "id": "ReaperReplacementMod",
+  "name": "死亡收割 (Reaper)",
+  "author": "ReaperReplacementMod",
+  "description": "将铁甲战士的“时候未到”（Not Yet）整卡替换为杀戮尖塔1的“死亡收割”（Reaper）：技能→攻击、全体伤害+吸血、STS1 卡图与 15 语言文本。",
+  "version": "1.0",
+  "has_pck": true,
+  "has_dll": true,
+  "min_game_version": "0.107.1",
+  "dependencies": [],
+  "affects_gameplay": true
+}

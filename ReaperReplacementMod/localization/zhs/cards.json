@@ -1,0 +1,4 @@
+{
+  "RE_REAPER.title": "死亡收割",
+  "RE_REAPER.description": "对所有敌人造成 {Damage:diff()} 点伤害。未被格挡的伤害将回复你的生命。"
+}

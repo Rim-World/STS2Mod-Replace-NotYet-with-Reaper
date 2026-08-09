@@ -1,0 +1,4 @@
+{
+  "RE_REAPER.title": "死神",
+  "RE_REAPER.description": "敵全体に {Damage:diff()} ダメージを与える。ブロックされずに与えたダメージに等しいHPを回復する。"
+}
