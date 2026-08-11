@@ -34,8 +34,6 @@
 
 由于api版本更新，beta110版本的实现方式与default107版本略有不同，但效果应当是相同的。
 
-当你开启本 mod，且有一把正在进行中的游戏未结束就切换/升级游戏版本时，可能导致正在进行中的那一把游戏无法正常读取，只能放弃。
-
 ## ⑥ 鸣谢
 
 本 mod 使用 Codex（桌面版）+ DeepSeek V4 Flash（0731 正式版）完成，感谢梁圣。
@@ -79,8 +77,6 @@ At lower ascension (A0) in the vanilla game, in most runs, Reaper is significant
 This mod is written with minimal dependencies, so under normal circumstances it is compatible with most mods and unlikely to break as the game version changes. However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
 
 Due to API updates, the implementation on Public Beta 110 differs slightly from that on Default 107, but the effect should be the same.
-
-If you enable this mod and switch/upgrade the game version while a run is still in progress without finishing it, the in-progress run may fail to load properly and can only be abandoned.
 
 ## 6. Credits
 
