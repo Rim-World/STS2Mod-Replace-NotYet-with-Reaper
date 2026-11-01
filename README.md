@@ -1,87 +1,88 @@
-## ① 环境
+# 死亡收割（ReaperReplacementMod）
 
-本 mod 不依赖任何基础 mod。
+把《杀戮尖塔 2》铁甲战士技能牌「时候未到」（Not Yet）整卡替换为《杀戮尖塔 1》攻击牌「死亡收割」（Reaper）。
 
-本 mod 支持 public beta 110 版本与 default 107 版本。
+> Replaces the Slay the Spire 2 Ironclad skill "Not Yet" with the Slay the Spire 1 attack "Reaper" — name, art, text, card type, target and effect included.
 
-## ② 15 种语言支持
+## 功能
 
-亚洲：简体中文 / 繁体中文 / 日语 / 韩语 / 泰语 / 土耳其语
+- 卡牌类型：技能 → 攻击；目标：自身 → 全体敌人。
+- 核心变量：治疗 10（升级 13）→ 伤害 4（升级 +1，见「已知问题」）。
+- 打出效果：对全体敌人造成伤害，并按**未被格挡的实际扣血**治疗自己（`UnblockedDamage` 求和）。
+- 卡名、卡面文本、卡图（1000×760 大图 + 250×190 卡面）全部换成 STS1「死亡收割」。
+- 15 语言：`deu / eng / esp / fra / ita / jpn / kor / pol / ptb / rus / spa / tha / tur / zhs / zht`，文本取自 STS1 本地正版资源并做格式转换。
+- 直接在原卡上打补丁，不新增卡牌、不禁用原卡；费用 2、稀有度 Rare、`Exhaust` 关键词保持不变。
 
-欧洲与美洲：英语 / 葡萄牙语（巴西）/ 西班牙语（拉美）/ 西班牙语 / 法语 / 俄语 / 德语 / 意大利语 / 波兰语
+## 兼容性
 
-文本标签按首字母顺序，依次为 deu、eng、esp、fra、ita、jpn、kor、pol、ptb、rus、spa、tha、tur、zhs、zht。
+- 游戏版本：`min_game_version = 0.107.1`；单一 DLL 同时适配 default 107 与 beta 110（运行时判定 `AttackCommand.FromCard` 的可用重载）。
+- 依赖：无（`dependencies: []`）。`0Harmony` 与 `sts2` 仅在编译期引用，不随包分发。
+- 与其它 mod：采用最小补丁面，正常情况与大多数 mod 兼容；不保证与盗版、修改版、移动版、老旧版本或冷门 mod 兼容。
+- 存档影响：mod 开启时，历史记录中的「时候未到」显示为「死亡收割」；关闭后恢复原状。
 
-文本均来自《杀戮尖塔 1》，仅作简单格式调整，可能有少量错误。
+## 安装
 
-## ③ 效果
+1. 从 [Releases](https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases) 下载 `ReaperReplacementMod v1.0.zip`。
+2. 解压到游戏目录 `Slay the Spire 2/mods/ReaperReplacementMod/`（目录内应有 `.dll`、`.pck`、`.json` 三件）。
+3. 启动游戏，在 mod 列表中启用「死亡收割 (Reaper)」。
 
-将游戏中的“时候未到”卡牌的效果、卡名、卡面图片、卡面文本更换为与《杀戮尖塔 1》中卡牌“死亡收割”相同。
+## 构建
 
-本 mod 采用直接在“时候未到”原卡牌上进行修改的方法生效，并非生成新卡牌 + 禁用旧卡牌。
+环境：.NET SDK（net9.0）、Godot 4.5.1 mono（`Godot_v4.5.1-stable_mono_win64`）、Windows。
 
-本 mod 影响存档：在 mod 开启时，所有历史记录中的“时候未到”卡牌都会被更换为“死亡收割”卡牌；关闭 mod 后会恢复原状。
+```powershell
+pwsh 9.SRC/ReaperReplacementMod/build.ps1
+```
 
-## ④ 影响（基于本人游戏理解）
+脚本依次执行：`dotnet build -c Debug` → Godot `--headless --import` → `--headless --export-pack "Windows Desktop"` → 拷贝 `ReaperReplacementMod.dll/.pdb/.json` 到 `mods/ReaperReplacementMod/`。脚本内的游戏目录与 Godot 路径为硬编码本机路径（`C:\Game\Steam\steamapps\common\Slay the Spire 2`、`C:\Godot&GDRE\…`），换机需改两行。
 
-在原版游戏高进阶（a10）难度下，大多数对局中，对于铁甲战士职业，死亡收割仅比时候未到略强；对于其它职业，死亡收割略逊于时候未到。
+## 目录结构
 
-在原版游戏低进阶（a0）难度下，大多数对局中，对于铁甲战士职业，死亡收割显著强于时候未到；对于其它职业，死亡收割略逊于时候未到。
+```
+STS2Mod-死割/
+├── 1.ADR/           决策记录（ADR.md 索引）
+├── 2.PLANS/         施工计划（PLANS.md 索引）
+├── 3.DOCS/          知识与报告（DOCS.md 索引）
+├── 4.SDD/           软件设计文档（SDD.md 索引）
+├── 5.ChangeLog/     版本日志分片（ChangeLog.md 索引）
+├── 9.SRC/           源码（ReaperReplacementMod/ 为 Godot C# 工程）
+├── 10.OUTPUT/       构建产物与发布包（output.md 索引，内容不入库）
+├── PRIVACY/         机密信息（当前无机密）
+├── TMP/             临时与过程文件（TMP.md 索引，内容不入库）
+├── TOOLS/           工具与自写脚本（TOOLS.md 索引）
+├── description/     创意工坊/发布文案（中英文）
+├── pics/            封面与素材图
+├── AGENTS.md        仓库协作规范
+├── CHANGELOG.md     Keep a Changelog 单文件日志
+└── LICENSE           MIT（附游戏素材版权说明）
+```
 
-## ⑤ 兼容性与 Bug
+## 文档索引
 
-本 mod 采用最小依赖的方式写成，正常来说与大多数 mod 兼容，且不易随着版本变化而失效。但本 mod 不保证与盗版、修改版、移动版、老旧版本或者冷门 mod、次级 mod 的兼容性。
+- 决策：[ADR-001 新 mod 立项：Not Yet → Reaper](1.ADR/001-时候未到整卡替换为死亡收割.md)
+- 计划：[Not Yet → Reaper 整卡替换](2.PLANS/001-G-时候未到整卡替换为死亡收割.md)
+- 知识：[110→107 切换导致存档无法读取的根因](3.DOCS/001-T-110降至107切换导致存档损坏根因.md)、[死亡收割卡面文本翻译审批](3.DOCS/002-T-死亡收割卡面文本翻译审批.md)
+- 设计：[总体设计](4.SDD/001-总体设计.md)
+- 版本日志：[0.2.1 / 0.2.2 / 1.0](5.ChangeLog/001-1.0-2026-08-09.md)、[CHANGELOG.md](CHANGELOG.md)
 
-由于api版本更新，beta110版本的实现方式与default107版本略有不同，但效果应当是相同的。
+## 版本
 
-## ⑥ 鸣谢
+当前版本 **1.0**（`9.SRC/ReaperReplacementMod/ReaperReplacementMod.json`），对应 GitHub Release [`v1.0`](https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases/tag/v1.0)。
 
-本 mod 使用 Codex（桌面版）+ DeepSeek V4 Flash（0731 正式版）完成，感谢梁圣。
+## 已知问题
 
-感谢《杀戮尖塔 2》制作组为了方便玩家制作 mod 所做的努力。
+- 升级伤害存在文档与源码不一致：源码为 `UpgradeValueBy(1m)`（4→5），ADR-001 与翻译审批文档记载为「升级 +2（4→6）」，待确认。
+- 实机验证结论未记录（107/110、mod 开关组合）。
+- 模组图标为 420×420 纯色占位（ADR-001）。
 
-感谢 Baselib 制作者提供的文档，感谢 GitHub 项目 @jiegec/STS2RevertAnthony 提供的源码参考。
+## 致谢
 
-## 1. Environment
+- 本 mod 使用 Codex（桌面版）+ DeepSeek V4 Flash（0731 正式版）完成，感谢梁圣。
+- 感谢《杀戮尖塔 2》制作组为 mod 制作提供的便利。
+- 感谢 BaseLib 制作者提供的文档，感谢 GitHub 项目 [@jiegec/STS2RevertAnthony](https://github.com/jiegec/STS2RevertAnthony) 提供的源码参考。
 
-This mod does not depend on any base mod.
+## 开源地址
 
-This mod supports the Public Beta 110 version and the Default 107 version.
+https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper
 
-## 2. 15 Languages Supported
-
-Asia: Simplified Chinese / Traditional Chinese / Japanese / Korean / Thai / Turkish
-
-Europe & the Americas: English / Portuguese (Brazil) / Spanish (Latin America) / Spanish / French / Russian / German / Italian / Polish
-
-The text tags, in alphabetical order, are: deu, eng, esp, fra, ita, jpn, kor, pol, ptb, rus, spa, tha, tur, zhs, zht.
-
-All texts are taken from Slay the Spire 1, with only simple formatting adjustments; there may be minor errors.
-
-## 3. Effects
-
-Replaces the effect, card name, card art, and card text of the game's "Not Yet" card with those of the "Reaper" card from Slay the Spire 1.
-
-This mod works by modifying the original "Not Yet" card directly, rather than creating a new card and disabling the old one.
-
-This mod affects save files: while the mod is enabled, all "Not Yet" cards in historical records will be replaced with "Reaper" cards; disabling the mod restores the original state.
-
-## 4. Impact (Based on My Understanding of the Game)
-
-At higher ascension (A10) in the vanilla game, in most runs, Reaper is only slightly stronger than Not Yet for the Ironclad; for other characters, Reaper is slightly weaker than Not Yet.
-
-At lower ascension (A0) in the vanilla game, in most runs, Reaper is significantly stronger than Not Yet for the Ironclad; for other characters, Reaper is slightly weaker than Not Yet.
-
-## 5. Compatibility & Bugs
-
-This mod is written with minimal dependencies, so under normal circumstances it is compatible with most mods and unlikely to break as the game version changes. However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
-
-Due to API updates, the implementation on Public Beta 110 differs slightly from that on Default 107, but the effect should be the same.
-
-## 6. Credits
-
-This mod was made with Codex (desktop) + DeepSeek V4 Flash (0731 official release). Thanks to Saint Liang.
-
-Thanks to the Slay the Spire 2 team for their efforts to make modding easier for players.
-
-Thanks to the Baselib developers for their documentation, and to the GitHub project @jiegec/STS2RevertAnthony for the source code reference.
+卡牌名称、卡图、文本等素材版权归 Mega Crit Games, LLC 所有，本项目为非商业同人 mod，详见 [LICENSE](LICENSE)。

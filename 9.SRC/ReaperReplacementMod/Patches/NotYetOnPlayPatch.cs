@@ -76,7 +76,7 @@ public static class NotYetOnPlayPatch
 }
 
 /// <summary>
-/// 原版升级：Heal +3（10→13）；替换为伤害 +2（4→6）。
+/// 原版升级：Heal +3（10→13）；替换为伤害 +1（4→5）。
 /// </summary>
 [HarmonyPatch(typeof(NotYet), "OnUpgrade")]
 public static class NotYetOnUpgradePatch
@@ -88,7 +88,7 @@ public static class NotYetOnUpgradePatch
             return true;
         }
 
-        __instance.DynamicVars.Damage.UpgradeValueBy(2m);
+        __instance.DynamicVars.Damage.UpgradeValueBy(1m);
         return false;
     }
 }
