@@ -13,7 +13,7 @@
 | 2026-08-08 | 001-G | 107/110 跨版本修复：先按 `STS2_GE_110` 条件编译（v0.2.1），再改为运行时反射分派 `AttackCommand.FromCard` 重载（v0.2.2），单一 DLL 双版本通用 | 构建通过；107 实机结论未记录 |
 | 2026-08-09 | 001-G | 剔除冗余资源、打包正式版 v1.0，产出 `ReaperReplacementMod v1.0.zip` 与 `ReaperReplacementModSourceCode.zip`，建立 GitHub Release `v1.0` | 已发布 |
 | 2026-08-09 / 08-11 | 001-G | 源码与 README（中英）推送 GitHub（`95083b4` / `db877e0` / `b0eeee5` / `b6c5237`） | 已推送 |
-| 2026-08-29 | 001-G | 未推送的本地修改：升级伤害 `UpgradeValueBy(2m)` → `(1m)`（4→5），重建安装到 `mods/ReaperReplacementMod/` | 构建通过；与 ADR-001／翻译审批文档记载的「4→6」不一致，待用户确认 |
+| 2026-08-29 | 001-G | 未推送的本地修改：升级伤害 `UpgradeValueBy(2m)` → `(1m)`（4→5），重建安装到 `mods/ReaperReplacementMod/` | 构建通过；2026-11-01 用户拍板：升级伤害 +1（4→5），相关文档已同步 |
 | 2026-11-01 | 001-G | 仓库整理为 AGENTS 十目录结构，补全 README/CHANGELOG/SDD/ChangeLog 等文档 | 文档整理完成，详见 `5.ChangeLog/001-1.0-2026-08-09.md` |
 
 > 开工前必须检查本索引与对应计划文档，确认需求与前置条件后再动手。

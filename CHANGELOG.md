@@ -7,7 +7,7 @@
 
 ### 变更
 
-- 2026-08-29：升级伤害由 `UpgradeValueBy(2m)`（4→6）改为 `UpgradeValueBy(1m)`（4→5），已本地构建安装到 `mods/ReaperReplacementMod/`；**未推送、未递增版本号**，且与 ADR-001／翻译审批文档记载不一致，待确认后并入正式版本。
+- 2026-08-29：升级伤害由 `UpgradeValueBy(2m)`（4→6）改为 `UpgradeValueBy(1m)`（4→5），已本地构建安装到 `mods/ReaperReplacementMod/`。2026-11-01 用户拍板按 +1 定稿，文档已同步，该改动随仓库整理推送。
 
 ### 仓库整理（2026-11-01）
 
