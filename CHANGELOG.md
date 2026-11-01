@@ -62,7 +62,7 @@
 
 ### 新增
 
-- 首版：`src/ReaperReplacementMod/` 工程（`ModEntry`、`ModConfig`、核心属性/OnPlay/卡图/文本补丁、`PortraitTextureLoader`、csproj、manifest、`project.godot`、`export_presets.cfg`、`build.ps1`）。
+- 首版：ReaperReplacementMod 工程（现位于 `9.SRC/ReaperReplacementMod/`；`ModEntry`、`ModConfig`、核心属性/OnPlay/卡图/文本补丁、`PortraitTextureLoader`、csproj、manifest、`project.godot`、`export_presets.cfg`、`build.ps1`）。
 - 15 语言本地化、卡图替换、RitsuLib「单卡替换」设置页（后续版本移除）。
 
 [1.0]: https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases/tag/v1.0
