@@ -14,7 +14,7 @@
 - 按 AGENTS.md 十目录结构重组仓库（`1.ADR` / `2.PLANS` / `3.DOCS` / `4.SDD` / `5.ChangeLog` / `9.SRC` / `10.OUTPUT` / `PRIVACY` / `TMP` / `TOOLS` + `description` / `pics`）。
 - 源码移入 `9.SRC/ReaperReplacementMod/`，`.godot/` 构建缓存移入 `TMP/02-缓存与临时/`；**未修改任何代码**。
 - 新增 `README.md`、`CHANGELOG.md`、`.gitignore`、`4.SDD/001-总体设计.md` 等文档；恢复远端的 `LICENSE`、`.gitignore` 规则与 `README.md`。
-- 未新建 Release：仓库已有 `v1.0`；整理提交编号：（待回填）。
+- 未新建 Release：仓库已有 `v1.0`；整理提交编号：`000f3bb`（后续回填提交另计）。
 
 ## [1.0] - 2026-08-09
 
