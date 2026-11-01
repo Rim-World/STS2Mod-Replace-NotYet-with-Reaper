@@ -20,3 +20,8 @@
 
 - `02-缓存与临时/ReaperReplacementMod-.godot/` 可随时删除：重新执行 `9.SRC/ReaperReplacementMod/build.ps1` 会由 Godot 重新生成导入与编译中间文件，不影响源码与已有构建产物。
 - 其余三个目录当前为空，无需清理。
+
+## 2026-11-01 清理记录
+
+- `TMP/01-旧Git仓库/` 与 `TMP/02-缓存与临时/` 的内容已全部移入 Windows 回收站。
+- 清理依据：远端仓库已完整保留历史，构建缓存可再生；需要回滚时从远端 `git log` 或 `10.OUTPUT/` 取回。
