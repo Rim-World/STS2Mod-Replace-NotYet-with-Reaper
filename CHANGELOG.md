@@ -1,15 +1,25 @@
 # Changelog
 
 本项目所有 notable 变更均记录于此，格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循语义化版本。
-分版本细节（七字段）见 `5.ChangeLog/001-1.0-2026-08-09.md`。
+分版本细节（七字段）见 `5.ChangeLog/001-1.0-2026-08-09.md` 与 `5.ChangeLog/002-1.1.0-2026-11-14.md`。
 
-## 未发布
+## [1.1.0] - 2026-11-14（本地构建，未发布）
+
+### 修复
+
+- 113 检视卡后卡图被游戏 `AssetCache` 释放：`PortraitTextureLoader` 改为有效性检查 + `CacheMode.Ignore` 独立加载，避免 `ObjectDisposedException`。
 
 ### 变更
 
-- 2026-08-29：升级伤害由 `UpgradeValueBy(2m)`（4→6）改为 `UpgradeValueBy(1m)`（4→5），已本地构建安装到 `mods/ReaperReplacementMod/`。2026-11-01 用户拍板按 +1 定稿，文档已同步，该改动随仓库整理推送。
+- 版本号 `1.0` → `1.1.0`（合法 SemVer）；单份 DLL 同时支持 107 / 111 / 113。
+- 升级伤害由 `UpgradeValueBy(2m)`（4→6）改为 `UpgradeValueBy(1m)`（4→5）；2026-08-29 的本地改动随本次版本纳入。
 
-### 仓库整理（2026-11-01）
+### 已知问题
+
+- `ind`、`ara` 未覆盖，回退英文（用户 2026-11-14 决定）。
+- 实机验证结论待回填（107 / 111 / 113）。
+
+## 仓库整理（2026-11-01）
 
 - 按 AGENTS.md 十目录结构重组仓库（`1.ADR` / `2.PLANS` / `3.DOCS` / `4.SDD` / `5.ChangeLog` / `9.SRC` / `10.OUTPUT` / `PRIVACY` / `TMP` / `TOOLS` + `description` / `pics`）。
 - 源码移入 `9.SRC/ReaperReplacementMod/`，`.godot/` 构建缓存移入 `TMP/02-缓存与临时/`；**未修改任何代码**。

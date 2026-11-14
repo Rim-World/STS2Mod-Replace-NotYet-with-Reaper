@@ -15,14 +15,15 @@
 
 ## 兼容性
 
-- 游戏版本：`min_game_version = 0.107.1`；单一 DLL 同时适配 default 107 与 beta 110（运行时判定 `AttackCommand.FromCard` 的可用重载）。
+- 游戏版本：`min_game_version = 0.107.1`；单一 DLL 同时适配 default 107、beta 111 与 beta 113（运行时判定 `AttackCommand.FromCard` 的可用重载；113 的 `BigPortrait` 缓存释放已处理）。
 - 依赖：无（`dependencies: []`）。`0Harmony` 与 `sts2` 仅在编译期引用，不随包分发。
 - 与其它 mod：采用最小补丁面，正常情况与大多数 mod 兼容；不保证与盗版、修改版、移动版、老旧版本或冷门 mod 兼容。
 - 存档影响：mod 开启时，历史记录中的「时候未到」显示为「死亡收割」；关闭后恢复原状。
+- 语言覆盖：15 种；110 之后新增的 `ind`、113 新增的 `ara` 未覆盖，缺目录时回退英文。
 
 ## 安装
 
-1. 从 [Releases](https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases) 下载 `ReaperReplacementMod v1.0.zip`。
+1. 从 [Releases](https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases) 下载最新安装包（已发布版本为 `v1.0`；`1.1.0` 目前为本地构建）。
 2. 解压到游戏目录 `Slay the Spire 2/mods/ReaperReplacementMod/`（目录内应有 `.dll`、`.pck`、`.json` 三件）。
 3. 启动游戏，在 mod 列表中启用「死亡收割 (Reaper)」。
 
@@ -60,19 +61,19 @@ STS2Mod-死割/
 ## 文档索引
 
 - 决策：[ADR-001 新 mod 立项：Not Yet → Reaper](1.ADR/001-时候未到整卡替换为死亡收割.md)
-- 计划：[Not Yet → Reaper 整卡替换](2.PLANS/001-G-时候未到整卡替换为死亡收割.md)
-- 知识：[110→107 切换导致存档无法读取的根因](3.DOCS/001-T-110降至107切换导致存档损坏根因.md)、[死亡收割卡面文本翻译审批](3.DOCS/002-T-死亡收割卡面文本翻译审批.md)
+- 计划：[Not Yet → Reaper 整卡替换](2.PLANS/001-G-时候未到整卡替换为死亡收割.md)、[113 适配与三版本回归](2.PLANS/002-M-113适配与三版本回归.md)
+- 知识：[110→107 切换导致存档无法读取的根因](3.DOCS/001-T-110降至107切换导致存档损坏根因.md)、[死亡收割卡面文本翻译审批](3.DOCS/002-T-死亡收割卡面文本翻译审批.md)、[113 兼容性排查与三版本适配结论](3.DOCS/003-R-113兼容性排查与三版本适配结论.md)、[1.1.0 施工独立审视结论](3.DOCS/004-R-1.1.0独立审视结论.md)
 - 设计：[总体设计](4.SDD/001-总体设计.md)
-- 版本日志：[0.2.1 / 0.2.2 / 1.0](5.ChangeLog/001-1.0-2026-08-09.md)、[CHANGELOG.md](CHANGELOG.md)
+- 版本日志：[0.2.1 / 0.2.2 / 1.0](5.ChangeLog/001-1.0-2026-08-09.md)、[1.1.0](5.ChangeLog/002-1.1.0-2026-11-14.md)、[CHANGELOG.md](CHANGELOG.md)
 
 ## 版本
 
-当前版本 **1.0**（`9.SRC/ReaperReplacementMod/ReaperReplacementMod.json`），对应 GitHub Release [`v1.0`](https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases/tag/v1.0)。
+当前清单版本 **1.1.0**（`9.SRC/ReaperReplacementMod/ReaperReplacementMod.json`；2026-11-14 本地构建并安装，尚未发布）。已发布版本为 **1.0**，对应 GitHub Release [`v1.0`](https://github.com/Rim-World/STS2Mod-Replace-NotYet-with-Reaper/releases/tag/v1.0)。
 
 ## 已知问题
 
 - 升级伤害为 `UpgradeValueBy(1m)`（4→5）；ADR-001 与翻译审批文档已于 2026-11-01 同步为 +1。
-- 实机验证结论未记录（107/110、mod 开关组合）。
+- 实机验证结论待回填（107/111/113 与 mod 开关组合；2026-11-14 构建后由用户测试）。
 - 模组图标为 420×420 纯色占位（ADR-001）。
 
 ## 致谢

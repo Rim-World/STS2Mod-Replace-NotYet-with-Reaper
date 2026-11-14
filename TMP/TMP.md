@@ -6,7 +6,10 @@
 |---|---|---|---|---|---|
 | 2026-11-01 | `02-缓存与临时/ReaperReplacementMod-.godot/` | 源码工程的 Godot 导入/构建缓存（`.godot/`，含 `imported/`、`mono/temp/bin/Debug/`、`uid_cache.bin` 等），构建时自动重建 | 目录（二进制/文本混合） | 2.87 MB | 原 `src/ReaperReplacementMod/.godot/`，整理时移出源码目录 |
 | — | `01-旧Git仓库/` | 存放旧 `.git` 嵌套克隆 | 目录 | 空 | 合集内不存在旧克隆，本次未使用 |
-| — | `03-运行日志/` | 存放运行/构建日志 | 目录 | 空 | 本次未产生日志 |
+| 2026-11-14 | `03-运行日志/2026-11-14-构建-1.1.0.log` | 1.1.0 首次构建输出：`dotnet build`、Godot 导入、`--export-pack`、拷贝到 `mods/` | 文本日志 | 5.7 KB | `9.SRC/ReaperReplacementMod/build.ps1` |
+| 2026-11-14 | `03-运行日志/2026-11-14-构建-1.1.0-2.log` | 补失败哨兵后的重建输出 | 文本日志 | 5.6 KB | 同上 |
+| 2026-11-14 | `03-运行日志/2026-11-14-构建-1.1.0-3.log` | 对齐程序集版本（`<Version>1.1.0</Version>`）后的重建输出 | 文本日志 | 5.6 KB | 同上 |
+| 2026-11-14 | `03-运行日志/2026-11-14-改动.diff` | 本次施工的源码改动（`PortraitTextureLoader.cs`、csproj 版本、清单版本号、中英 README） | 统一 diff | 7.5 KB | `git diff -- 9.SRC/ReaperReplacementMod` |
 | 2026-11-01 | `04-历史版本源码/NotYetOnPlayPatch.remote-v1.0.cs` | 远端 `main` 上 `Patches/NotYetOnPlayPatch.cs` 的历史版本（升级 `UpgradeValueBy(2m)`，即 4→6），本地源码 2026-08-29 已改为 `(1m)`（4→5）；按「本地更新者胜出」保留本地版本，远端原文件内容在此留存备查；2026-11-01 用户拍板以本地 +1 为准 | C# 源码 | 3094 B | `git show 8afbed4:<origin/main 中的该文件>` |
 
 ## 分类说明

@@ -2,7 +2,7 @@
 
 本 mod 不依赖任何基础 mod。
 
-本 mod 支持 public beta 110 版本与 default 107 版本。
+本 mod 支持 default 107、public beta 111 与 public beta 113 版本，单份 DLL 自动适配。
 
 ## ② 15 种语言支持
 
@@ -32,7 +32,7 @@
 
 本 mod 采用最小依赖的方式写成，正常来说与大多数 mod 兼容，且不易随着版本变化而失效。但本 mod 不保证与盗版、修改版、移动版、老旧版本或者冷门 mod、次级 mod 的兼容性。
 
-由于api版本更新，beta110版本的实现方式与default107版本略有不同，但效果应当是相同的。
+由于 api 版本更新，107 与 111/113 的 `AttackCommand.FromCard` 重载不同，本 mod 在运行时自动选择；三个版本效果相同。111 新增的 `ind`、113 新增的 `ara` 未覆盖，缺语言时回退英文。
 
 ## ⑥ 鸣谢
 
@@ -46,7 +46,7 @@
 
 This mod does not depend on any base mod.
 
-This mod supports the Public Beta 110 version and the Default 107 version.
+This mod supports the Default 107, Public Beta 111, and Public Beta 113 versions with a single DLL.
 
 ## 2. 15 Languages Supported
 
@@ -76,7 +76,7 @@ At lower ascension (A0) in the vanilla game, in most runs, Reaper is significant
 
 This mod is written with minimal dependencies, so under normal circumstances it is compatible with most mods and unlikely to break as the game version changes. However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
 
-Due to API updates, the implementation on Public Beta 110 differs slightly from that on Default 107, but the effect should be the same.
+Due to API updates, the `AttackCommand.FromCard` overload differs between 107 and 111/113; the mod selects it at runtime. The effect is identical on all three versions. The `ind` language added in 111 and the `ara` language added in 113 are not covered; missing languages fall back to English.
 
 ## 6. Credits
 
