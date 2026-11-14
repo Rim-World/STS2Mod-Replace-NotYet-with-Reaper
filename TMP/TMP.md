@@ -19,6 +19,11 @@
 - `03-运行日志/`：游戏/构建过程日志。
 - `04-历史版本源码/`：旧版本源码整包快照。
 
+## 2026-11-14 构建缓存
+
+- 本日三次构建在 `9.SRC/ReaperReplacementMod/.godot/` 重新生成约 2.3 MB 缓存（`.gitignore` 已忽略 `.godot/`）。
+- 该目录留在源码工程的默认位置，未移入 TMP，以支持增量构建；需要清理时请告知。
+
 ## 清理建议
 
 - `02-缓存与临时/ReaperReplacementMod-.godot/` 可随时删除：重新执行 `9.SRC/ReaperReplacementMod/build.ps1` 会由 Godot 重新生成导入与编译中间文件，不影响源码与已有构建产物。
